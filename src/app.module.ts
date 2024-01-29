@@ -4,7 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 
 @Module({
-  imports: [ProductsModule,MongooseModule.forRoot('mongodb+srv://juangui9508:tZQWXS4XLCYGibZh@cluster0.iqmicdw.mongodb.net/?retryWrites=true&w=majority')],
+  //imports: [ProductsModule,MongooseModule.forRoot('mongodb+srv://juangui9508:tZQWXS4XLCYGibZh@cluster0.iqmicdw.mongodb.net/?retryWrites=true&w=majority')],
   controllers: [],
   providers: [],
 })
