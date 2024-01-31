@@ -6,7 +6,7 @@ import { ProductsService } from './products.service';
 @Controller('products')
 export class ProductsController {
 
- constructor( private productService:ProductsService) { }
+ constructor( private productService:ProductsService) {}
 
 @Post('/create')
 async createPost(@Res() res , @Body() createProductDTO : CreateProductDTO) {

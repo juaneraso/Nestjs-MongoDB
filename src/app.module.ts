@@ -3,6 +3,7 @@ import { ProductsModule } from './products/products.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MyConfigModule } from 'config.module';
 import { ConfigService } from '@nestjs/config';
+import { UsersModule } from './users/users.module';
 
 // @Module({
 //   imports: [ProductsModule,MongooseModule.forRoot('URL')],
@@ -19,7 +20,7 @@ import { ConfigService } from '@nestjs/config';
         uri: configService.get<string>('DATABASE_URL'),
       }),
       inject: [ConfigService],
-    }),
+    }), UsersModule,
   
   ],
   controllers: [],

@@ -8,7 +8,7 @@ import { CreateProductDTO } from './dto/products.dto';
 @Injectable()
 export class ProductsService {
 
-  constructor(@InjectModel('Product') private productModel: Model<Product>){}
+  constructor(@InjectModel('Product') private  readonly productModel: Model<Product>){}  // Read only
 
   async getProducts() : Promise <Product[]>{
     const products =  await  this.productModel.find();
@@ -19,12 +19,7 @@ export class ProductsService {
 
     async getProduct(productID: string): Promise<Product>{
       const objectId = new Types.ObjectId(productID);
-     const product = await this.productModel.findById(objectId)
-     
-     
-    // if (!product) {
-    //   throw new NotFoundException('Product does not exist');
-    // }
+     const product = await this.productModel.findById(objectId);        
 
       return product;
    }
